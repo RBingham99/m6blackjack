@@ -25,5 +25,19 @@ class Game
 
         $player1Total = $player1Hand[0]->getValue() + $player1Hand[1]->getValue();
         $player2Total = $player2Hand[0]->getValue() + $player2Hand[1]->getValue();
+
+        if (($player1Total > 21) && ($player2Total > 21)) {
+            return ;
+        } elseif ($player1Total > 21) {
+            return ;
+        } elseif ($player2Total > 21) {
+            return ;
+        } elseif ($player1Total == $player2Total) {
+            return ;
+        } elseif ($player1Total > $player2Total) {
+            return ;
+        } else {
+            return ;
+        }
     }
 }

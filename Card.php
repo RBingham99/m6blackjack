@@ -26,5 +26,21 @@ class Card
         return $this->value;
     }
 
+    /**
+     * @return string
+     */
+    public function getSuit(): string
+    {
+        return $this->suit;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFace(): string
+    {
+        return $this->face;
+    }
+
 
 }
