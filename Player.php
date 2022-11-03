@@ -12,5 +12,4 @@ class Player
         return $this->hand;
     }
 
-
 }

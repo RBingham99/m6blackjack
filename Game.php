@@ -6,7 +6,7 @@ class Game
 {
     private array $deck;
 
-    public function playgame()
+    public function playgame(): string
     {
         $deck = new Deck;
         $deck = $deck->getCards();
@@ -27,17 +27,53 @@ class Game
         $player2Total = $player2Hand[0]->getValue() + $player2Hand[1]->getValue();
 
         if (($player1Total > 21) && ($player2Total > 21)) {
-            return ;
+            return '<p>Player one got ' . $player1Hand[0]->getFace() . ' of ' . $player1Hand[0]->getSuit()
+                . ' and ' . $player1Hand[1]->getFace() . ' of ' . $player1Hand[1]->getSuit()
+                . ' totaling ' . $player1Total . '.</p>
+                    <p>Player two got ' . $player2Hand[0]->getFace() . ' of ' . $player2Hand[0]->getSuit()
+                . ' and ' . $player2Hand[1]->getFace() . ' of ' . $player2Hand[1]->getSuit()
+                . ' totaling ' . $player2Total . '.</p>
+                    <p>Both players bust!</p>';
         } elseif ($player1Total > 21) {
-            return ;
+            return '<p>Player one got ' . $player1Hand[0]->getFace() . ' of ' . $player1Hand[0]->getSuit()
+                . ' and ' . $player1Hand[1]->getFace() . ' of ' . $player1Hand[1]->getSuit()
+                . ' totaling ' . $player1Total . '.</p>
+                    <p>Player two got ' . $player2Hand[0]->getFace() . ' of ' . $player2Hand[0]->getSuit()
+                . ' and ' . $player2Hand[1]->getFace() . ' of ' . $player2Hand[1]->getSuit()
+                . ' totaling ' . $player2Total . '.</p>
+                    <p>Player one bust! Player 2 Wins!</p>';
         } elseif ($player2Total > 21) {
-            return ;
+            return '<p>Player one got ' . $player1Hand[0]->getFace() . ' of ' . $player1Hand[0]->getSuit()
+                . ' and ' . $player1Hand[1]->getFace() . ' of ' . $player1Hand[1]->getSuit()
+                . ' totaling ' . $player1Total . '.</p>
+                    <p>Player two got ' . $player2Hand[0]->getFace() . ' of ' . $player2Hand[0]->getSuit()
+                . ' and ' . $player2Hand[1]->getFace() . ' of ' . $player2Hand[1]->getSuit()
+                . ' totaling ' . $player2Total . '.</p>
+                    <p>Player two bust! Player one Wins!</p>';
         } elseif ($player1Total == $player2Total) {
-            return ;
+            return '<p>Player one got ' . $player1Hand[0]->getFace() . ' of ' . $player1Hand[0]->getSuit()
+                . ' and ' . $player1Hand[1]->getFace() . ' of ' . $player1Hand[1]->getSuit()
+                . ' totaling ' . $player1Total . '.</p>
+                    <p>Player two got ' . $player2Hand[0]->getFace() . ' of ' . $player2Hand[0]->getSuit()
+                . ' and ' . $player2Hand[1]->getFace() . ' of ' . $player2Hand[1]->getSuit()
+                . ' totaling ' . $player2Total . '.</p>
+                    <p>Draw!</p>';
         } elseif ($player1Total > $player2Total) {
-            return ;
+            return '<p>Player one got ' . $player1Hand[0]->getFace() . ' of ' . $player1Hand[0]->getSuit()
+                . ' and ' . $player1Hand[1]->getFace() . ' of ' . $player1Hand[1]->getSuit()
+                . ' totaling ' . $player1Total . '.</p>
+                    <p>Player two got ' . $player2Hand[0]->getFace() . ' of ' . $player2Hand[0]->getSuit()
+                . ' and ' . $player2Hand[1]->getFace() . ' of ' . $player2Hand[1]->getSuit()
+                . ' totaling ' . $player2Total . '.</p>
+                    <p>Player one wins!</p>';
         } else {
-            return ;
+            return '<p>Player one got ' . $player1Hand[0]->getFace() . ' of ' . $player1Hand[0]->getSuit()
+                . ' and ' . $player1Hand[1]->getFace() . ' of ' . $player1Hand[1]->getSuit()
+                . ' totaling ' . $player1Total . '.</p>
+                    <p>Player two got ' . $player2Hand[0]->getFace() . ' of ' . $player2Hand[0]->getSuit()
+                . ' and ' . $player2Hand[1]->getFace() . ' of ' . $player2Hand[1]->getSuit()
+                . ' totaling ' . $player2Total . '.</p>
+                    <p>Player two wins!</p>';
         }
     }
 }
