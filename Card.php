@@ -18,5 +18,13 @@ class Card
         $this->value = $value;
     }
 
+    /**
+     * @return int
+     */
+    public function getValue(): int
+    {
+        return $this->value;
+    }
+
 
 }

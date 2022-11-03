@@ -4,8 +4,13 @@ class Player
 {
     private array $hand = [];
 
-    public function drawCards(): array
+    /**
+     * @return array
+     */
+    public function getHand(): array
     {
-
+        return $this->hand;
     }
+
+
 }
