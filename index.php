@@ -1,10 +1,5 @@
 <?php
-require_once 'Deck.php';
+require_once 'Game.php';
 
-$testDeck = new Deck();
-
-$deck = $testDeck->getCards();
-
-echo '<pre>';
-print_r($deck);
-echo '<pre>';
+$game = new game;
+$game->playgame();
